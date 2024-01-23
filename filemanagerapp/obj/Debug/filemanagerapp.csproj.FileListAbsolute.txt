@@ -1,0 +1,10 @@
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\obj\Debug\filemanagerapp.csproj.AssemblyReference.cache
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\obj\Debug\filemanagerapp.Form1.resources
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\obj\Debug\filemanagerapp.Properties.Resources.resources
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\obj\Debug\filemanagerapp.csproj.GenerateResource.cache
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\obj\Debug\filemanagerapp.csproj.CoreCompileInputs.cache
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\bin\Debug\filemanagerapp.exe.config
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\bin\Debug\filemanagerapp.exe
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\bin\Debug\filemanagerapp.pdb
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\obj\Debug\filemanagerapp.exe
+C:\Users\s3sapa01\source\repos\filemanagerapp\filemanagerapp\obj\Debug\filemanagerapp.pdb
