@@ -19,12 +19,14 @@ namespace filemanagerapp
             displayFiles(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
         }
 
+        string currentLocation = "";
+
         private void displayFiles(string filePath)
         {
             string[] filesList = Directory.GetDirectories(filePath).Concat(Directory.GetFiles(filePath)).ToArray();
             panelFilesList.Controls.Clear();
-            //currentLocation = filePath;
-            //stringcurrentLocation = "";
+            //string currentLocation = "";
+            currentLocation = filePath;
             for (int i = 0; i < filesList.Length - 1; i++)
             {
                 bool isHidden = ((File.GetAttributes(filesList[i]) & FileAttributes.Hidden) == FileAttributes.Hidden);
@@ -85,6 +87,12 @@ namespace filemanagerapp
         private void buttonVideos_Click(object sender, EventArgs e)
         {
             displayFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos));
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            var previousFolder = this.currentLocation.Substring(0, this.currentLocation.LastIndexOf("\\"));
+            displayFiles(previousFolder);
         }
     }
 }

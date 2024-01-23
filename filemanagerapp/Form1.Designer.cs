@@ -34,6 +34,7 @@
             this.buttonMusic = new System.Windows.Forms.Button();
             this.buttonVideos = new System.Windows.Forms.Button();
             this.panelFilesList = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonDesktop
@@ -88,16 +89,27 @@
             // 
             // panelFilesList
             // 
-            this.panelFilesList.Location = new System.Drawing.Point(106, 12);
+            this.panelFilesList.Location = new System.Drawing.Point(106, 60);
             this.panelFilesList.Name = "panelFilesList";
-            this.panelFilesList.Size = new System.Drawing.Size(842, 622);
+            this.panelFilesList.Size = new System.Drawing.Size(842, 574);
             this.panelFilesList.TabIndex = 5;
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(106, 12);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(100, 30);
+            this.buttonBack.TabIndex = 6;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 646);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.panelFilesList);
             this.Controls.Add(this.buttonVideos);
             this.Controls.Add(this.buttonMusic);
@@ -118,6 +130,7 @@
         private System.Windows.Forms.Button buttonMusic;
         private System.Windows.Forms.Button buttonVideos;
         private System.Windows.Forms.FlowLayoutPanel panelFilesList;
+        private System.Windows.Forms.Button buttonBack;
     }
 }
 
