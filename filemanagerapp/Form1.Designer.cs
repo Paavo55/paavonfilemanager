@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonDesktop = new System.Windows.Forms.Button();
+            this.ButtonDesktop = new System.Windows.Forms.Button();
             this.buttonDocuments = new System.Windows.Forms.Button();
             this.buttonPictures = new System.Windows.Forms.Button();
             this.buttonMusic = new System.Windows.Forms.Button();
             this.buttonVideos = new System.Windows.Forms.Button();
             this.panelFilesList = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonBack = new System.Windows.Forms.Button();
+            this.ButtonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonDesktop
+            // ButtonDesktop
             // 
-            this.buttonDesktop.Location = new System.Drawing.Point(0, 60);
-            this.buttonDesktop.Name = "buttonDesktop";
-            this.buttonDesktop.Size = new System.Drawing.Size(100, 30);
-            this.buttonDesktop.TabIndex = 0;
-            this.buttonDesktop.Text = "Desktop";
-            this.buttonDesktop.UseVisualStyleBackColor = true;
-            this.buttonDesktop.Click += new System.EventHandler(this.buttonDesktop_Click);
+            this.ButtonDesktop.Location = new System.Drawing.Point(0, 60);
+            this.ButtonDesktop.Name = "ButtonDesktop";
+            this.ButtonDesktop.Size = new System.Drawing.Size(100, 30);
+            this.ButtonDesktop.TabIndex = 0;
+            this.ButtonDesktop.Text = "Desktop";
+            this.ButtonDesktop.UseVisualStyleBackColor = true;
+            this.ButtonDesktop.Click += new System.EventHandler(this.ButtonDesktop_Click);
             // 
             // buttonDocuments
             // 
@@ -55,7 +55,7 @@
             this.buttonDocuments.TabIndex = 1;
             this.buttonDocuments.Text = "Documents";
             this.buttonDocuments.UseVisualStyleBackColor = true;
-            this.buttonDocuments.Click += new System.EventHandler(this.buttonDocuments_Click);
+            this.buttonDocuments.Click += new System.EventHandler(this.ButtonDocuments_Click);
             // 
             // buttonPictures
             // 
@@ -65,7 +65,7 @@
             this.buttonPictures.TabIndex = 2;
             this.buttonPictures.Text = "Pictures";
             this.buttonPictures.UseVisualStyleBackColor = true;
-            this.buttonPictures.Click += new System.EventHandler(this.buttonPictures_Click);
+            this.buttonPictures.Click += new System.EventHandler(this.ButtonPictures_Click);
             // 
             // buttonMusic
             // 
@@ -75,7 +75,7 @@
             this.buttonMusic.TabIndex = 3;
             this.buttonMusic.Text = "Music";
             this.buttonMusic.UseVisualStyleBackColor = true;
-            this.buttonMusic.Click += new System.EventHandler(this.buttonMusic_Click);
+            this.buttonMusic.Click += new System.EventHandler(this.ButtonMusic_Click);
             // 
             // buttonVideos
             // 
@@ -85,52 +85,57 @@
             this.buttonVideos.TabIndex = 4;
             this.buttonVideos.Text = "Videos";
             this.buttonVideos.UseVisualStyleBackColor = true;
-            this.buttonVideos.Click += new System.EventHandler(this.buttonVideos_Click);
+            this.buttonVideos.Click += new System.EventHandler(this.ButtonVideos_Click);
             // 
             // panelFilesList
             // 
             this.panelFilesList.Location = new System.Drawing.Point(106, 60);
             this.panelFilesList.Name = "panelFilesList";
-            this.panelFilesList.Size = new System.Drawing.Size(842, 574);
+            this.panelFilesList.Size = new System.Drawing.Size(842, 533);
             this.panelFilesList.TabIndex = 5;
             // 
-            // buttonBack
+            // ButtonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(106, 12);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(100, 30);
-            this.buttonBack.TabIndex = 6;
-            this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            this.ButtonBack.AccessibleName = "ButtonBack";
+            this.ButtonBack.CausesValidation = false;
+            this.ButtonBack.Location = new System.Drawing.Point(106, 12);
+            this.ButtonBack.Name = "ButtonBack";
+            this.ButtonBack.Size = new System.Drawing.Size(100, 30);
+            this.ButtonBack.TabIndex = 6;
+            this.ButtonBack.Text = "Back";
+            this.ButtonBack.UseVisualStyleBackColor = true;
+            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
             // Form1
             // 
+            this.AccessibleName = "ButtonBack";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(960, 646);
-            this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.ButtonBack);
             this.Controls.Add(this.panelFilesList);
             this.Controls.Add(this.buttonVideos);
             this.Controls.Add(this.buttonMusic);
             this.Controls.Add(this.buttonPictures);
             this.Controls.Add(this.buttonDocuments);
-            this.Controls.Add(this.buttonDesktop);
+            this.Controls.Add(this.ButtonDesktop);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonDesktop;
+        private System.Windows.Forms.Button ButtonDesktop;
         private System.Windows.Forms.Button buttonDocuments;
         private System.Windows.Forms.Button buttonPictures;
         private System.Windows.Forms.Button buttonMusic;
         private System.Windows.Forms.Button buttonVideos;
         private System.Windows.Forms.FlowLayoutPanel panelFilesList;
-        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button ButtonBack;
     }
 }
 

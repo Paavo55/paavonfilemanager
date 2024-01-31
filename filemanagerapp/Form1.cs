@@ -1,12 +1,7 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace filemanagerapp
@@ -16,12 +11,12 @@ namespace filemanagerapp
         public Form1()
         {
             InitializeComponent();
-            displayFiles(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+            DisplayFiles(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
         }
 
         string currentLocation = "";
 
-        private void displayFiles(string filePath)
+        private void DisplayFiles(string filePath)
         {
             string[] filesList = Directory.GetDirectories(filePath).Concat(Directory.GetFiles(filePath)).ToArray();
             panelFilesList.Controls.Clear();
@@ -35,7 +30,7 @@ namespace filemanagerapp
                     var startOfName = filesList[i].LastIndexOf("\\");
                     var fileName = filesList[i].Substring(startOfName + 1, filesList[i].Length - (startOfName + 1));
                     Button newButton = new Button();
-                    newButton.Click += buttonClickOpen;
+                    newButton.Click += ButtonClickOpen;
                     newButton.Text = fileName;
                     newButton.Name = filesList[i];
                     newButton.Location = new Point(70, 70);
@@ -47,14 +42,14 @@ namespace filemanagerapp
             }
         }
 
-        private void buttonClickOpen(object sender, EventArgs e)
+        private void ButtonClickOpen(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             string filePath = button.Name;
 
             try
             {
-                displayFiles(filePath);
+                DisplayFiles(filePath);
             }
             catch(Exception ex)
             {
@@ -64,35 +59,45 @@ namespace filemanagerapp
             }
         }
 
-        private void buttonDesktop_Click(object sender, EventArgs e)
+        private void ButtonDesktop_Click(object sender, EventArgs e)
         {
-            displayFiles(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+            DisplayFiles(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
         }
 
-        private void buttonDocuments_Click(object sender, EventArgs e)
+        private void ButtonDocuments_Click(object sender, EventArgs e)
         {
-            displayFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            DisplayFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
         }
 
-        private void buttonPictures_Click(object sender, EventArgs e)
+        private void ButtonPictures_Click(object sender, EventArgs e)
         {
-            displayFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+            DisplayFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
         }
 
-        private void buttonMusic_Click(object sender, EventArgs e)
+        private void ButtonMusic_Click(object sender, EventArgs e)
         {
-            displayFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic));
+            DisplayFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic));
         }
 
-        private void buttonVideos_Click(object sender, EventArgs e)
+        private void ButtonVideos_Click(object sender, EventArgs e)
         {
-            displayFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos));
+            DisplayFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos));
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
+        private void ButtonBack_Click(object sender, EventArgs e)
         {
             var previousFolder = this.currentLocation.Substring(0, this.currentLocation.LastIndexOf("\\"));
-            displayFiles(previousFolder);
+            if (this.currentLocation.IndexOf("\\C:", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                Console.WriteLine("C: found button disabled");
+                ButtonBack.Enabled = false;
+            }
+            DisplayFiles(previousFolder);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
