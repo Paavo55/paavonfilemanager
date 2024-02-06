@@ -99,12 +99,11 @@ namespace filemanagerapp
                 // Display files in the previous folder
                 DisplayFiles(previousFolder);
             }
-            else
+            /*else
             {
-                // Disable the back button if there is no previous location
-                Console.WriteLine("Root folder reached, ButtonBack disabled");
-                ButtonBack.Enabled = false;
-            }
+                 Disable the back button if there is no previous location
+                 ButtonBack.Enabled = false;
+            }*/
         }
 
         private void Form1_Load(object sender, EventArgs e)
