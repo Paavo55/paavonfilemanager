@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace filemanagerapp
 {
     public partial class Form1 : Form
     {
+        private Stack<string> navigationHistory = new Stack<string>();
         public Form1()
         {
             InitializeComponent();
@@ -38,6 +41,7 @@ namespace filemanagerapp
                     newButton.TextAlign = ContentAlignment.MiddleLeft;
                     newButton.Padding = new Padding(24, 0, 0, 0);
                     panelFilesList.Controls.Add(newButton);
+                    navigationHistory.Push(currentLocation);
                 }
             }
         }
@@ -86,13 +90,21 @@ namespace filemanagerapp
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            var previousFolder = this.currentLocation.Substring(0, this.currentLocation.LastIndexOf("\\"));
-            if (this.currentLocation.IndexOf("\\C:", StringComparison.OrdinalIgnoreCase) >= 0)
+            if (navigationHistory.Count > 1)
             {
-                Console.WriteLine("C: found button disabled");
+                // Pop the current location from the stack
+                navigationHistory.Pop();
+                // Get the previous location from the stack
+                string previousFolder = navigationHistory.Peek();
+                // Display files in the previous folder
+                DisplayFiles(previousFolder);
+            }
+            else
+            {
+                // Disable the back button if there is no previous location
+                Console.WriteLine("Root folder reached, ButtonBack disabled");
                 ButtonBack.Enabled = false;
             }
-            DisplayFiles(previousFolder);
         }
 
         private void Form1_Load(object sender, EventArgs e)
