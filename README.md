@@ -8,3 +8,12 @@ Back nappi muistaa viimeisen tiedoston jossa oltiin ja palaa tähän jos mahdoll
 Parannuksia olisi että back nappi toimisi aina ja oikein.
 
 Ohjelmaan voisi myös tehdä hakupalkin ja mahdollisesti tiedostonluomisen mahdollisuuden.
+
+<img width="491" height="186" alt="koodi" src="https://github.com/user-attachments/assets/600a67df-b18a-477b-a221-edd111292ff4" />
+
+Back napin koodi. Appi muistaa aikaisemman sivun jolla olet ollut ja tallentaa sen navigationHistory muuttujaan ja jos se on suurempi kuin 1, se poistaa tämän hetkisen sivun. 
+Tämän jälkeen previousFolder muuttujalle annetaan navigationHistorystä tämän hetkinen arvo ja avataan arvon mukainen sivu. 
+
+
+Vuokaavio:
+<img width="649" height="188" alt="vuokaavio" src="https://github.com/user-attachments/assets/204810b6-dc1c-4514-8dbe-b0c8ddf8df69" />
